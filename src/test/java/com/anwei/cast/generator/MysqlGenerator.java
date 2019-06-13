@@ -25,7 +25,7 @@ import java.util.Scanner;
 public class MysqlGenerator {
 
     public static final String MODULE_NAME = "admin";
-    public static final String[] INCLUDE_TABLES = {"user", "city", "country"};
+    public static final String[] INCLUDE_TABLES = {"sys_user"};
 
     /**
      * <p>
@@ -67,7 +67,7 @@ public class MysqlGenerator {
         // dsc.setSchemaName("public");
         dsc.setDriverName("com.mysql.cj.jdbc.Driver");
         dsc.setUsername("root");
-        dsc.setPassword("1234");
+        dsc.setPassword("123456");
         mpg.setDataSource(dsc);
 
         // 包配置
@@ -89,8 +89,8 @@ public class MysqlGenerator {
             @Override
             public String outputFile(TableInfo tableInfo) {
                 // 自定义输入文件名称
-                return projectPath + "/src/main/resources/mapper/" + pc.getModuleName()
-                        + "/" + tableInfo.getEntityName() + "Mapper" + StringPool.DOT_XML;
+                return projectPath + "/src/main/java/com/anwei/cast/modules/" + pc.getModuleName()
+                        + "/mapper/mapping/" + tableInfo.getEntityName() + "Mapper" + StringPool.DOT_XML;
             }
         });
         cfg.setFileOutConfigList(focList);
@@ -100,13 +100,13 @@ public class MysqlGenerator {
         // 策略配置
         StrategyConfig strategy = new StrategyConfig();
         strategy.setNaming(NamingStrategy.underline_to_camel);
-        strategy.setColumnNaming(NamingStrategy.underline_to_camel);
+        strategy.setColumnNaming(NamingStrategy.no_change);
         strategy.setSuperEntityClass("com.anwei.cast.core.entity.BaseEntity");
         strategy.setEntityLombokModel(true);
         strategy.setSuperControllerClass("com.anwei.cast.core.web.BaseController");
 //        strategy.setInclude(scanner("表名"));
         strategy.setInclude(INCLUDE_TABLES);
-        strategy.setSuperEntityColumns("id");
+        strategy.setSuperEntityColumns(new String[]{"id", "deleteflag"});
         strategy.setControllerMappingHyphenStyle(true);
         strategy.setTablePrefix(pc.getModuleName() + "_");
         mpg.setStrategy(strategy);

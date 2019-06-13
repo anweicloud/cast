@@ -1,6 +1,7 @@
 package com.anwei.cast.modules.admin.entity;
 
 import com.anwei.cast.core.entity.BaseEntity;
+import com.baomidou.mybatisplus.annotation.Version;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
@@ -34,6 +35,9 @@ public class User extends BaseEntity {
      * 邮箱
      */
     private String email;
+
+    @Version
+    private Integer version;
 
 
 }
