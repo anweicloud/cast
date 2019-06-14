@@ -1,8 +1,6 @@
 package com.anwei.cast.modules.admin.entity;
 
-import com.anwei.cast.core.entity.BaseEntity;
-import com.baomidou.mybatisplus.annotation.FieldFill;
-import com.baomidou.mybatisplus.annotation.TableField;
+import com.anwei.cast.framework.web.entity.BaseEntity;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -37,11 +35,5 @@ public class SysUser extends BaseEntity {
     private Date register_time;
 
     private Integer status;
-
-    @TableField(fill = FieldFill.INSERT)
-    private Date createtime;
-
-    @TableField(fill = FieldFill.UPDATE)
-    private Date updatetime;
 
 }

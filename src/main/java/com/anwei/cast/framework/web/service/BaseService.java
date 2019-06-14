@@ -1,4 +1,4 @@
-package com.anwei.cast.modules.common.service;
+package com.anwei.cast.framework.web.service;
 
 import java.io.Serializable;
 

@@ -1,7 +1,7 @@
-package com.anwei.cast.modules.common.service.impl;
+package com.anwei.cast.framework.web.service.impl;
 
-import com.anwei.cast.modules.admin.entity.User;
-import com.anwei.cast.modules.common.service.BaseService;
+import com.anwei.cast.framework.web.service.BaseService;
+import com.anwei.cast.modules.admin.entity.SysUser;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -12,19 +12,19 @@ import javax.annotation.Resource;
 /**
  * @author Anwei
  * @TODO: TODO
- * @date 2019/6/13 17:32
+ * @date 2019/6/14 15:56
  */
 
-@RunWith(SpringRunner.class)
 @SpringBootTest
+@RunWith(SpringRunner.class)
 public class BaseServiceImplTest {
+
 
     @Resource
     BaseService service;
 
     @Test
     public void findById() {
-        User user = service.findById(User.class, 2);
-        System.out.println(user);
+        System.out.println(service.findById(SysUser.class, 2));
     }
 }

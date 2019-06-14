@@ -101,12 +101,12 @@ public class MysqlGenerator {
         StrategyConfig strategy = new StrategyConfig();
         strategy.setNaming(NamingStrategy.underline_to_camel);
         strategy.setColumnNaming(NamingStrategy.no_change);
-        strategy.setSuperEntityClass("com.anwei.cast.core.entity.BaseEntity");
+        strategy.setSuperEntityClass("com.anwei.cast.framework.web.entity.BaseEntity");
         strategy.setEntityLombokModel(true);
-        strategy.setSuperControllerClass("com.anwei.cast.core.web.BaseController");
+        strategy.setSuperControllerClass("com.anwei.cast.framework.web.controller.BaseController");
 //        strategy.setInclude(scanner("表名"));
         strategy.setInclude(INCLUDE_TABLES);
-        strategy.setSuperEntityColumns(new String[]{"id", "deleteflag"});
+        strategy.setSuperEntityColumns(new String[]{"id", "deleteflag", "createtime", "updatetime"});
         strategy.setControllerMappingHyphenStyle(true);
         strategy.setTablePrefix(pc.getModuleName() + "_");
         mpg.setStrategy(strategy);

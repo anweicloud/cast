@@ -1,6 +1,6 @@
 package com.anwei.cast.config.web;
 
-import com.anwei.cast.core.listener.ConfigListener;
+import com.anwei.cast.framework.listener.ConfigListener;
 import com.google.code.kaptcha.impl.DefaultKaptcha;
 import com.google.code.kaptcha.util.Config;
 import org.springframework.boot.web.servlet.ServletListenerRegistrationBean;

@@ -1,7 +1,7 @@
-package com.anwei.cast.modules.common.service.impl;
+package com.anwei.cast.framework.web.service.impl;
 
-import com.anwei.cast.modules.common.mapper.ModelMapper;
-import com.anwei.cast.modules.common.service.BaseService;
+import com.anwei.cast.framework.web.mapper.ModelMapper;
+import com.anwei.cast.framework.web.service.BaseService;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
@@ -60,7 +60,7 @@ public class BaseServiceImpl extends ServiceImpl<ModelMapper, Model> implements 
             E obj = clasz.newInstance();
             if (obj instanceof Model) {
                 Model m = (Model) obj;
-                return (E) m.selectOne();
+//                return (E) m.selectOne();
             }
         } catch (InstantiationException e) {
             e.printStackTrace();
@@ -71,12 +71,8 @@ public class BaseServiceImpl extends ServiceImpl<ModelMapper, Model> implements 
         return null;
     }
 
-
-
     public void sqlWhere() {
         QueryWrapper qw = new QueryWrapper();
-
-
     }
 
 }

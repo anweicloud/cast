@@ -1,4 +1,4 @@
-package com.anwei.cast.modules.common.controller;
+package com.anwei.cast.framework.web.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 

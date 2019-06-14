@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@MapperScan(basePackages = {"com.anwei.cast.modules.*.mapper"})
+@MapperScan(basePackages = {"com.anwei.cast.modules.*.mapper", "com.anwei.cast.framework.web.mapper"})
 public class MybatisPlusConfig {
 
     /**

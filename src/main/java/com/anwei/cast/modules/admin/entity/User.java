@@ -1,6 +1,6 @@
 package com.anwei.cast.modules.admin.entity;
 
-import com.anwei.cast.core.entity.BaseEntity;
+import com.anwei.cast.framework.web.entity.BaseEntity;
 import com.baomidou.mybatisplus.annotation.Version;
 import lombok.Data;
 import lombok.EqualsAndHashCode;

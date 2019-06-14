@@ -1,7 +1,7 @@
 package com.anwei.cast.modules.admin.controller;
 
 
-import com.anwei.cast.core.web.BaseController;
+import com.anwei.cast.framework.web.controller.BaseController;
 import com.anwei.cast.modules.admin.entity.SysUser;
 import com.anwei.cast.modules.admin.mapper.SysUserMapper;
 import org.springframework.http.HttpStatus;
